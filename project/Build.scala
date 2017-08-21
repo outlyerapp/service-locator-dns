@@ -5,7 +5,6 @@
  */
 
 import com.typesafe.sbt.SbtScalariform._
-import xerial.sbt.Sonatype.autoImport._
 import sbt._
 import sbt.Keys._
 
@@ -25,6 +24,7 @@ object Build extends AutoPlugin {
       List(
         // Core settings
         organization := "com.lightbend",
+        crossScalaVersions := Seq("2.11.8", "2.12.2"),
         scalaVersion := "2.12.2",
         scalacOptions ++= List(
           "-unchecked",
@@ -60,7 +60,5 @@ object Build extends AutoPlugin {
             |# No information contained herein may be reproduced or transmitted in any form
             |# or by any means without the express written permission of Typesafe, Inc.
             |
-            |""".stripMargin)),
-        // Sonatype settings
-        sonatypeProfileName := "com.lightbend")
+            |""".stripMargin)))
 }
